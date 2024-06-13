@@ -17,5 +17,24 @@ public class FileAppService {
                 e.printStackTrace();
             }
         }
+        try { 
+            LeituraArquivo(nomeArq);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void LeituraArquivo(String nomeArquivo) throws FileNotFoundException {
+        try {
+            File arq = new File(nomeArquivo);
+            Scanner leitor = new Scanner(arq);
+            while(leitor.hasNextLine()){
+                String linha = leitor.nextLine();
+                System.out.println("Linha do arquivo" + linha);
+            }
+            leitor.close();
+        } catch (FileNotFoundException e){
+            System.out.println("Erro na leitura do arquivo" + e.getMessage());
+        }
     }
 }

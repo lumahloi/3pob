@@ -4,10 +4,15 @@ public class Frete {
     private int cepFinal;
     private double valorPorKilo;
 
-    public Frete(int id, int cepInicial, int cepFinal, double valorPorKilo) {
+    public Frete(int id, String string, String string2, double valorPorKilo) {
         this.id = id;
-        this.cepInicial = cepInicial;
-        this.cepFinal = cepFinal;
+        this.cepInicial = string;
+        this.cepFinal = string2;
         this.valorPorKilo = valorPorKilo;
+    }
+
+    public double calcularFrete(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularFrete'");
     }
 }
